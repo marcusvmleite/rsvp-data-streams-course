@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+          zkNodes: localhost:2181
+      bindings:
+        output:
+          destination: meetupTopic
+          producer:
+            partitionCount: 1
+            headerMode: raw
+          content-type: text/plain
